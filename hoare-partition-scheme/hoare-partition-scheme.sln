@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hoare-partition-scheme", "hoare-partition-scheme.csproj", "{3D62E5C0-6999-47C3-A97C-D970EC7593B3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuicksortLib", "..\QuicksortLib\QuicksortLib.csproj", "{6815F99F-2AD9-469E-962F-5D3AB8071E7B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{3D62E5C0-6999-47C3-A97C-D970EC7593B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D62E5C0-6999-47C3-A97C-D970EC7593B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D62E5C0-6999-47C3-A97C-D970EC7593B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6815F99F-2AD9-469E-962F-5D3AB8071E7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6815F99F-2AD9-469E-962F-5D3AB8071E7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6815F99F-2AD9-469E-962F-5D3AB8071E7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6815F99F-2AD9-469E-962F-5D3AB8071E7B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

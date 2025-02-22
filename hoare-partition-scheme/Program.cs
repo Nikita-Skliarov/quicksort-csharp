@@ -1,64 +1,51 @@
-﻿namespace hoare_partition_scheme;
+﻿using Hoare = QuicksortLib.HoareQuickSortClass;
 
-class Program
+namespace hoare_partition_scheme
 {
-    private static readonly Random Random =  new Random();
-    
-    public static void QuickSort(int[] array, int low, int high)
+    class Program
     {
-        if (low < high)
+        static void Main(string[] args)
         {
-            int partitionIndex = PartitionSort(array, low, high);
-            QuickSort(array, low, partitionIndex); // Sort left side
-            QuickSort(array, partitionIndex + 1, high); // Sort right side
-        }
-    }
+            Console.WriteLine("╔══════════════════════════════════╗");
+            Console.WriteLine("║        WELCOME TO QUICKSORT      ║");
+            Console.WriteLine("║     (Hoare Partition Scheme)     ║");
+            Console.WriteLine("╚══════════════════════════════════╝");
 
-    private static int PartitionSort(int[] array, int low, int high)
-    {
-        int left = low -1 ;
-        int right = high;
-        int pivotIndex= Random.Next(low, high);
-        int pivot = array[pivotIndex]; 
+            Console.WriteLine("\nWould you like to:");
+            Console.WriteLine("1️⃣  Input your own array");
+            Console.WriteLine("2️⃣  Generate a random array");
+            Console.Write("Enter 1 or 2: ");
 
-        while (true)
-        {
-            do
+            int[] arr;
+            string choice = Console.ReadLine();
+
+            if (choice == "1")
             {
-                left++;
-            } while (array[left] < pivot);
-
-            do
+                Console.Write("\nEnter numbers separated by spaces: ");
+                arr = Console.ReadLine()
+                    .Split(' ')
+                    .Where(s => int.TryParse(s, out _))
+                    .Select(int.Parse)
+                    .ToArray();
+            }
+            else
             {
-                right--;
-            } while (array[right] > pivot);
+                Random random = new Random();
+                Console.Write("\nEnter the size of the random array: ");
+                int size = int.Parse(Console.ReadLine());
+                arr = new int[size];
+                for (int i = 0; i < size; i++)
+                {
+                    arr[i] = random.Next(1, 1000);
+                }
 
-            if (left  >= right) return right;
+                Console.WriteLine("\nGenerated random array: " + string.Join(", ", arr));
+            }
 
-            // Otherwise, swap elements
-            Swap(array, left, right);
+            Console.WriteLine("\n Original array: " + string.Join(", ", arr));
+            Hoare.QuickSort(arr, 0, arr.Length - 1);
+            Console.WriteLine("\n Sorted array: " + string.Join(", ", arr));
+            Console.WriteLine("\n Thank you for using QuickSort!");
         }
-    }
-
-    private static void Swap(int[] array, int index1, int index2)
-    {
-        // Define temp variable
-        int temp = 0;
-        
-        // Save first number to temp
-        temp = array[index1];
-        
-        // Make switch
-        array[index1] = array[index2];
-        array[index2] = temp;
-    }
-    static void Main(string[] args)
-    {
-        int[] arr = { 1, 4, 6, 7, 3, 2, 5 };
-        Console.WriteLine("Original array: " + string.Join(", ", arr));
-
-        QuickSort(arr, 0, arr.Length - 1);
-
-        Console.WriteLine("Sorted array: " + string.Join(", ", arr));
     }
 }
