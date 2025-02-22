@@ -1,0 +1,66 @@
+# Ignore Rider-specific files
+.idea/
+*.sln.iml
+
+# Ignore build and binary files
+bin/
+obj/
+*.dll
+*.exe
+*.pdb
+*.cache
+*.log
+*.csproj.user
+*.suo
+*.user
+*.vsp
+*.vspx
+*.vspscc
+*.vssscc
+
+# Ignore NuGet packages
+*.nupkg
+packages/
+
+# Ignore compiled files
+*.exe
+*.dll
+*.so
+*.dylib
+*.app
+*.log
+
+# Ignore Rider workspace-related files
+.idea/
+.idea_modules/
+*.ipr
+*.iws
+
+# Ignore temporary and system files
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+
+# Ignore JetBrains Rider logs and caches
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/dictionaries
+.idea/libraries
+.idea/inspectionProfiles
+.idea/modules.xml
+.idea/httpRequests/
+.idea/shelf/
+.idea/caches/
+.idea/scopes/
+.idea/misc.xml
+.idea/vcs.xml
+
+# Ignore coverage files
+coverage/
+*.coverage
+*.coveragexml
+
+# Ignore user-specific files
+*.userprefs
+*.sln.dotSettings.user
